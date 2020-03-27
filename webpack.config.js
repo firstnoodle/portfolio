@@ -10,11 +10,11 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    // publicPath: '/',
+    publicPath: '/',
     historyApiFallback: true,
-    noInfo: false,
+    noInfo: true,
     overlay: true,
-    watchContentBase: true,
+    watchContentBase: false,
   },
   module: {
     rules: [
