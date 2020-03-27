@@ -8,6 +8,14 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    // publicPath: '/',
+    historyApiFallback: true,
+    noInfo: false,
+    overlay: true,
+    watchContentBase: true,
+  },
   module: {
     rules: [
       {
@@ -74,14 +82,6 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    // publicPath: '/',
-    historyApiFallback: true,
-    noInfo: false,
-    overlay: true,
-    watchContentBase: true,
   },
   performance: {
     hints: false
