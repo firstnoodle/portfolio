@@ -1,8 +1,10 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  entry: './src/main.js',
+  mode: 'development',
+  entry: './src/js/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -13,9 +15,13 @@ module.exports = {
     publicPath: '/',
     historyApiFallback: true,
     noInfo: true,
+    inline: true,
     overlay: true,
     watchContentBase: false,
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   module: {
     rules: [
       {
@@ -79,9 +85,13 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '~': path.resolve(__dirname, 'src/js')
     },
     extensions: ['*', '.js', '.vue', '.json']
+  },
+  optimization: {
+    minimize: true //Update this to true or false
   },
   performance: {
     hints: false
@@ -96,12 +106,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    FirstnoodleIOT
+  	<router-view />
   </div>
 </template>
 
