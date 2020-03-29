@@ -1,19 +1,19 @@
 <template>
-	<div tabindex="0" class="stack-item" @mouseover="hover=true" @mouseout="hover=false" @focus="hover=true" @blur="hover=false">
+	<a :href="item.url" target="_blank" class="stack-item" @mouseover="hover=true" @mouseout="hover=false" @focus="hover=true" @blur="hover=false">
 	    <div class="stack-item__logo" :style="logoStyle"></div>
 	    <div class="stack-item__text">
 	        <div class="stack-item__title">{{ item.title }}</div>
 	        <div class="stack-item__description">{{ item.description }}</div>
 	    </div>
-	    <a :href="item.url" target="_blank" class="stack-item__link">
+	    <div class="stack-item__link">
 	    	<svg class="icon-open-link" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 			    <g fill-rule="evenodd">
 			        <path fill-rule="nonzero" d="M7 2v1H1v12h11.999L13 7h1v9H0V2z"/>
 			        <path fill-rule="nonzero" d="M16 0v6h-1V1.707L7.853 8.854l-.708-.708L14.291 1H10V0z"/>
 			    </g>
 			</svg>
-	    </a>
-	</div>
+	    </div>
+	</a>
 </template>
 
 <script>
@@ -47,17 +47,22 @@ $--transition-time: 0.4s;
 .stack-item {
     align-items: center;
     background-color: #F0F0F0;
+    border: 1px solid #F0F0F0;
     border-radius: 5px;
+    box-sizing: border-box;
+    color: black;
     display: flex;
     font-family: sans-serif;
     justify-content: space-between; 
     padding: 20px;
     position: relative;
+    text-decoration: none;
     transition: box-shadow $--transition-time ease-out;
     z-index: 0;
     
-    &:hover, &:focus, &:focus-within {
+    &:hover, &:focus {
 	    background-color: white;
+	    border-color: white;
         box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.3); 
         z-index: 1;
 
@@ -68,16 +73,21 @@ $--transition-time: 0.4s;
 
 			& > .icon-open-link > g {
 				fill: $--color-primary;
-
 			}
-		    &:hover, &:focus {
-				background-color: $--color-primary;
-				border: 1px solid $--color-primary;
+        }
+    }
+    &:focus {
+    	border: 1px solid $--color-primary;
+    	outline: none;
+    }
+    &:active {
+        & > .stack-item__link {
+			background-color: $--color-primary;
+			border: 1px solid $--color-primary;
 
-				& > .icon-open-link > g {
-					fill: white;
-				}
-		    }
+			& > .icon-open-link > g {
+				fill: white;
+			}
         }
     }
 }
