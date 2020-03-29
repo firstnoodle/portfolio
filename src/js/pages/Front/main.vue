@@ -57,6 +57,62 @@ export default {
 					logo: 'codesandbox',
 					url: 'https://codesandbox.io'
 				},
+			],
+			devOps: [
+				{
+					title: 'Webpack',
+					description: 'bundling',
+					logo: 'webpack',
+					url: 'https://webpack.js.org/'
+				},
+				{
+					title: 'Git',
+					description: 'started on the command line',
+					logo: 'git',
+					url: 'https://git-scm.com/'
+				},
+				{
+					title: 'GitKraken',
+					description: 'then moved to a gui git client',
+					logo: 'gitkraken',
+					url: 'https://www.gitkraken.com/'
+				},
+				{
+					title: 'GitHub',
+					description: 'PR based and essentially following this workflow.',
+					logo: 'github',
+					url: 'http://github.com'
+				},
+				{
+					title: 'StyleCI',
+					description: 'keep all syntax consistent',
+					logo: 'styleci',
+					url: 'https://styleci.io/'
+				},
+				{
+					title: 'ChipperCI',
+					description: 'automated tests for your laravel app',
+					logo: 'chipperci',
+					url: 'https://chipperci.com/'
+				},
+				{
+					title: 'LaravelForge',
+					description: 'todo',
+					logo: 'forge',
+					url: 'https://forge.laravel.com/'
+				},
+				{
+					title: 'Envoyer',
+					description: 'todo',
+					logo: 'envoyer',
+					url: 'https://envoyer.io/'
+				},
+				{
+					title: 'Sentry',
+					description: 'catch errors',
+					logo: 'sentry',
+					url: 'https://sentry.io'
+				},
 			]
 		}
 	}
