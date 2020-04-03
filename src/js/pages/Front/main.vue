@@ -1,9 +1,14 @@
 <template>
-	<h1>Front</h1>
+    <div class="ml-20">
+        FrontPage
+    </div>
 </template>
 
 <script>
 export default {
-	name: 'Front'
+	name: 'Front',
 }	
 </script>
+
+<style lang="scss">
+</style>
