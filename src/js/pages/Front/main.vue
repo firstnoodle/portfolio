@@ -1,7 +1,7 @@
 <template>
-	<div>
-		FrontPage
-	</div>
+    <div class="ml-20">
+        FrontPage
+    </div>
 </template>
 
 <script>
